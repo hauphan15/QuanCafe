@@ -1,0 +1,50 @@
+﻿<Window x:Class="QuanCafe.MainWindowNV"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:QuanCafe"
+        mc:Ignorable="d"
+        Title="MainWindowNV" Height="450" Width="800"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        TextElement.FontWeight="Regular"
+        TextElement.FontSize="13"
+        TextOptions.TextFormattingMode="Ideal"
+        TextOptions.TextRenderingMode="Auto"
+        Background="{DynamicResource MaterialDesignPaper}"
+        FontFamily="{DynamicResource MaterialDesignFont}">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200"></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <Grid Grid.Column="0" x:Name="Menu">
+            <ListBox IsEnabled="{Binding IsChecked, ElementName=EnableListBox}" Background="#FF990000">
+                <Grid>
+                    <materialDesign:PackIcon Width="20" Height="30" Kind="Coffee" Foreground="#DDEAD8D8"/>
+                    <Button HorizontalContentAlignment="Left" Width="165" x:Name="thucUongBtn" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#DDDCD6D6" Margin="25,0,0,0" Click="ThucUongBtn_Click_1">
+                        THỨC UỐNG
+                    </Button>
+                </Grid>
+                <Grid>
+                    <materialDesign:PackIcon Width="20" Height="30" Kind="SeatReclineNormal" Foreground="#DDEAD8D8"/>
+                    <Button HorizontalContentAlignment="Left" Width="165" x:Name="banBtn" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#DDDCD6D6" Margin="25,0,0,0" Click="BanBtn_Click" >
+                        BÀN
+                    </Button>
+                </Grid>
+                <Grid>
+                    <materialDesign:PackIcon Width="20" Height="30" Kind="TableEdit" Foreground="#DDEAD8D8"/>
+                    <Button HorizontalContentAlignment="Left" Width="165" x:Name="hoaDonBtn" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#DDDCD6D6" Margin="25,0,0,0" Click="HoaDonBtn_Click">
+                        HÓA ĐƠN
+                    </Button>
+                </Grid>
+            </ListBox>
+        </Grid>
+
+        <Grid Grid.Column="1" x:Name="show">
+            <!--user control datagrid-->
+        </Grid>
+    </Grid>
+</Window>
