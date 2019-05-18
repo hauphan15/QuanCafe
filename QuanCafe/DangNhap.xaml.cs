@@ -29,8 +29,24 @@ namespace QuanCafe
             Database db = new Database();
             string tk = tenDangNhap.Text;
             string mk = this.matKhau.Password;
-            db.Login(tk, mk);
-            this.Close();
+            int result = db.Login(tk, mk);
+            if(result==1)
+            {
+                MainWindowNV mainWdNV = new MainWindowNV();
+                mainWdNV.Show();
+                this.Close();
+            }
+            if(result==2)
+            {
+                MainWindow mainWd = new MainWindow();
+                mainWd.Show();
+                this.Close();
+            }
+            if(result==0)
+            {
+                MessageBox.Show("Sai ID hoặc Mật Khẩu!\n Vui lòng nhập lại!");
+            }
+
         }
 
         private void Thoat_Click(object sender, RoutedEventArgs e)

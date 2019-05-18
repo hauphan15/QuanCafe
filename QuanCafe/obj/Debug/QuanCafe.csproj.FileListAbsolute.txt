@@ -68,3 +68,40 @@ C:\Users\zMaChaoz\Desktop\New folder (3)\QuanCafe\QuanLyQuanCafe\QuanCafe\obj\De
 C:\Users\zMaChaoz\Desktop\New folder (3)\QuanCafe\QuanLyQuanCafe\QuanCafe\obj\Debug\QuanCafe.csproj.CopyComplete
 C:\Users\zMaChaoz\Desktop\New folder (3)\QuanCafe\QuanLyQuanCafe\QuanCafe\obj\Debug\QuanCafe.exe
 C:\Users\zMaChaoz\Desktop\New folder (3)\QuanCafe\QuanLyQuanCafe\QuanCafe\obj\Debug\QuanCafe.pdb
+E:\Project\QuanCafe\QuanCafe\bin\Debug\QuanCafe.exe.config
+E:\Project\QuanCafe\QuanCafe\bin\Debug\QuanCafe.exe
+E:\Project\QuanCafe\QuanCafe\bin\Debug\QuanCafe.pdb
+E:\Project\QuanCafe\QuanCafe\bin\Debug\MaterialDesignColors.dll
+E:\Project\QuanCafe\QuanCafe\bin\Debug\MaterialDesignThemes.Wpf.dll
+E:\Project\QuanCafe\QuanCafe\bin\Debug\MaterialDesignThemes.Wpf.pdb
+E:\Project\QuanCafe\QuanCafe\bin\Debug\MaterialDesignThemes.Wpf.xml
+E:\Project\QuanCafe\QuanCafe\obj\Debug\QuanCafe.csprojAssemblyReference.cache
+E:\Project\QuanCafe\QuanCafe\obj\Debug\Ban.g.cs
+E:\Project\QuanCafe\QuanCafe\obj\Debug\HoaDon.g.cs
+E:\Project\QuanCafe\QuanCafe\obj\Debug\Kho.g.cs
+E:\Project\QuanCafe\QuanCafe\obj\Debug\MainWindow.g.cs
+E:\Project\QuanCafe\QuanCafe\obj\Debug\DangNhap.g.cs
+E:\Project\QuanCafe\QuanCafe\obj\Debug\MainWindowNV.g.cs
+E:\Project\QuanCafe\QuanCafe\obj\Debug\NhanVien.g.cs
+E:\Project\QuanCafe\QuanCafe\obj\Debug\ThucUong.g.cs
+E:\Project\QuanCafe\QuanCafe\obj\Debug\App.g.cs
+E:\Project\QuanCafe\QuanCafe\obj\Debug\QuanCafe_MarkupCompile.cache
+E:\Project\QuanCafe\QuanCafe\obj\Debug\QuanCafe_MarkupCompile.lref
+E:\Project\QuanCafe\QuanCafe\obj\Debug\App.baml
+E:\Project\QuanCafe\QuanCafe\obj\Debug\Ban.baml
+E:\Project\QuanCafe\QuanCafe\obj\Debug\HoaDon.baml
+E:\Project\QuanCafe\QuanCafe\obj\Debug\Kho.baml
+E:\Project\QuanCafe\QuanCafe\obj\Debug\MainWindow.baml
+E:\Project\QuanCafe\QuanCafe\obj\Debug\DangNhap.baml
+E:\Project\QuanCafe\QuanCafe\obj\Debug\MainWindowNV.baml
+E:\Project\QuanCafe\QuanCafe\obj\Debug\NhanVien.baml
+E:\Project\QuanCafe\QuanCafe\obj\Debug\ThucUong.baml
+E:\Project\QuanCafe\QuanCafe\obj\Debug\QuanCafe.g.resources
+E:\Project\QuanCafe\QuanCafe\obj\Debug\QuanCafe.Properties.Resources.resources
+E:\Project\QuanCafe\QuanCafe\obj\Debug\QuanCafe.csproj.GenerateResource.cache
+E:\Project\QuanCafe\QuanCafe\obj\Debug\QuanCafe.csproj.CoreCompileInputs.cache
+E:\Project\QuanCafe\QuanCafe\obj\Debug\QuanCafe.csproj.CopyComplete
+E:\Project\QuanCafe\QuanCafe\obj\Debug\QuanCafe.exe
+E:\Project\QuanCafe\QuanCafe\obj\Debug\QuanCafe.pdb
+E:\Project\QuanCafe\QuanCafe\obj\Debug\Order.g.cs
+E:\Project\QuanCafe\QuanCafe\obj\Debug\Order.baml

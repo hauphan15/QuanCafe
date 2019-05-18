@@ -55,7 +55,7 @@ namespace QuanCafe
         {
             string query = "INSERT INTO ThongTinHoaDon(ID, ID_SanPham, ID_Ban, SoLuong, TinhTrang, Ngay, TongTien) VALUES('" + idHoaDon.Text + "', N'" + idSanPham.Text + "', '" + idBan.Text + "','" + soLuong.Text + "',N'" + tinhTrang.Text + "', '" + ngay.Text + "', '" + tongTien.Text + "')";
             Database db = new Database();
-            int result = db.add(query);
+            int result = db.RunQuery(query);
             if (result == 1)
             {
                 MessageBox.Show("Thêm thành công !");
@@ -72,7 +72,7 @@ namespace QuanCafe
         {
             string query = "DELETE FROM ThongTinHoaDon WHERE ID = '" + idHoaDon.Text + "'";
             Database db = new Database();
-            int result = db.add(query);
+            int result = db.RunQuery(query);
             if (result == 1)
             {
                 MessageBox.Show("Xóa thành công !");

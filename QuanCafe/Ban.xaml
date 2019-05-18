@@ -62,14 +62,6 @@
                             ToolTip="Resource name: MaterialDesignRaisedAccentButton" Click="Xoa_Click">
                     XÓA
                 </Button>
-
-                <Button  x:Name="capNhat"
-                            Style="{StaticResource MaterialDesignRaisedAccentButton}"
-                            Width="100"
-                            Height="25"
-                            ToolTip="Resource name: MaterialDesignRaisedAccentButton">
-                    CẬP NHẬT
-                </Button>
             </WrapPanel>
         </Grid>
 
@@ -77,10 +69,28 @@
             <materialDesign:Card Margin="10" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
                 <DataGrid  
                        x:Name="dataGrid1" 
-                       AutoGenerateColumns="True"
+                       AutoGenerateColumns="False"
                        HorizontalAlignment="Stretch" 
-                       Margin="10,10,10,0" 
-                       VerticalAlignment="Stretch" SelectionChanged="DataGrid1_SelectionChanged"/>
+                       Margin="10,10,10,-0.4" 
+                       VerticalAlignment="Stretch" SelectionChanged="DataGrid1_SelectionChanged">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="ID" Binding="{Binding Path=ID}"/>
+                        <DataGridTextColumn Header="Tình trạng" Binding="{Binding Path=TinhTrang}"/>
+                    </DataGrid.Columns>
+                    <DataGrid.Resources>
+                        <ContextMenu x:Key="DataRowContextMenu">
+                            <MenuItem Header="Order" Click="MenuItem_Click"></MenuItem>
+                            <MenuItem Header="Tính tiền" Click="MenuItem_Click_1"></MenuItem>
+                            <MenuItem Header="Thông tin" Click="MenuItem_Click_2"></MenuItem>
+                            <MenuItem Header="Chuyển bàn" Click="MenuItem_Click_3"></MenuItem>
+                        </ContextMenu>
+                    </DataGrid.Resources>
+                    <DataGrid.RowStyle>
+                        <Style TargetType="DataGridRow">
+                            <Setter Property="ContextMenu" Value="{StaticResource DataRowContextMenu}"/>
+                        </Style>
+                    </DataGrid.RowStyle>
+                </DataGrid>
             </materialDesign:Card>
         </Grid>
     </Grid>

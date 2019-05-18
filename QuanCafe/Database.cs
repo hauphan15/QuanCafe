@@ -11,78 +11,89 @@ namespace QuanCafe
 {
     public class Database
     {
-        string ConnecString = "Data Source=DESKTOP-EV0MICC;Initial Catalog=QLQuanCafe;Integrated Security=True";
-
+        static string ConnecString = @"Data Source=.\sqlexpress;Initial Catalog=QLQuanCafe;Integrated Security=True";
+        SqlConnection connection = new SqlConnection(ConnecString);
+        private void makeconnection()
+        {
+            try
+            {
+                connection.Open();
+            }
+            catch(Exception error)
+            {
+                MessageBox.Show(error.Message);
+            }
+        }
 
         //đăng nhập
-        public void Login(string id, string pass)
+        public int Login(string id, string pass)
         {
-            SqlConnection connec1 = new SqlConnection(ConnecString);
-            connec1.Open();
+            makeconnection();
 
-            string query1 = "SELECT * FROM NhanVien WHERE ChucVu like 'Q%' AND ID = '" + id + "' AND MatKhau = '" + pass + "'";
-            SqlCommand cmd1 = new SqlCommand(query1, connec1);
+            string query1 = "SELECT * FROM NhanVien WHERE ChucVu like 'Q%' AND ID = @ID AND MatKhau = @MatKhau";
+            SqlCommand cmd1 = new SqlCommand(query1, connection);
+            cmd1.Parameters.AddWithValue("@ID", id);
+            cmd1.Parameters.AddWithValue("@MatKhau", pass);
             SqlDataReader data1 = cmd1.ExecuteReader();
             if (data1.Read() == true) // Cửa sổ của [Nhân viên quản lý]
             {
-                MainWindow mainWd = new MainWindow();         
-                mainWd.Show();
+                connection.Close();
+                return 2;
             }
             else
             {
-                SqlConnection connec2 = new SqlConnection(ConnecString);
-                connec2.Open();
-
-                string query2 = "SELECT * FROM NhanVien WHERE ChucVu not like 'Q%' AND ID = '" + id + "' AND MatKhau = '" + pass + "'";
-                SqlCommand cmd2 = new SqlCommand(query2, connec2);
+                connection.Close(); makeconnection();
+                string query2 = "SELECT * FROM NhanVien WHERE ChucVu not like 'Q%' AND ID = @ID AND MatKhau = @MatKhau";
+                SqlCommand cmd2 = new SqlCommand(query2, connection);
+                cmd2.Parameters.AddWithValue("@ID", id);
+                cmd2.Parameters.AddWithValue("@MatKhau", pass);
                 SqlDataReader data2 = cmd2.ExecuteReader();
                 if (data2.Read() == true) // Cửa sổ của [Nhân viên thường]
                 {
-                    MainWindowNV mainWdNV = new MainWindowNV();
-                    mainWdNV.Show();
+                    connection.Close();
+                    return 1;
                 }
                 else
                 {
-                    MessageBox.Show("Đăng nhập thất bại");
+                    
+                    connection.Close();
+                    return 0;
                 }
             }
+
+            return 0;
         }
         //load
         public DataTable ExcuteQuery(string query)
         {
-            SqlConnection connec = new SqlConnection(ConnecString);
-            connec.Open();
-            string CmdString = string.Empty;
-            CmdString = query;
-            SqlCommand cmd = new SqlCommand(CmdString, connec);
+            makeconnection();
+            SqlCommand cmd = new SqlCommand(query, connection);
             SqlDataAdapter sda = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
             sda.Fill(dt);
-            connec.Close();
+            connection.Close();
             return dt;
         }
 
-        //them
-        public int add(string query)
+        public int RunQuery(string query)
         {
-            SqlConnection connec = new SqlConnection(ConnecString);
-            connec.Open();
-            SqlCommand cmd = new SqlCommand(query, connec);
-            int a = cmd.ExecuteNonQuery();
-            connec.Close();
+            makeconnection();
+            int a = 0;
+            SqlCommand cmd = new SqlCommand(query, connection);
+            try
+            {
+                a = cmd.ExecuteNonQuery();
+                connection.Close();
+
+            }
+            catch(Exception error)
+            {
+                a = 0;
+            }
             return a;
         }
 
-        //xoa
-        public int remove(string query)
-        {
-            SqlConnection connec = new SqlConnection(ConnecString);
-            connec.Open();
-            SqlCommand cmd = new SqlCommand(query, connec);
-            int a = cmd.ExecuteNonQuery();
-            connec.Close();
-            return a;
-        }
+    
 
     }
 }

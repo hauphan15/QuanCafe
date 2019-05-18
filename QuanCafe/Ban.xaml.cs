@@ -27,7 +27,7 @@ namespace QuanCafe
             loadData();
         }
 
-
+        
         //load
         void loadData()
         {
@@ -51,9 +51,9 @@ namespace QuanCafe
         //thêm
         private void Them_Click(object sender, RoutedEventArgs e)
         {
-            string query = "INSERT INTO SanPham(ID, TenSanPham, GiaBan) VALUES('" + idBan.Text + "', N'" + tinhTrang.Text +"')";
+            string query = "INSERT INTO Ban VALUES('" + idBan.Text + "', N'" + tinhTrang.Text +"')";
             Database db = new Database();
-            int result = db.add(query);
+            int result = db.RunQuery(query);
             if (result == 1)
             {
                 MessageBox.Show("Thêm thành công !");
@@ -70,7 +70,7 @@ namespace QuanCafe
         {
             string query = "DELETE FROM Ban WHERE ID = '" + idBan.Text + "'";
             Database db = new Database();
-            int result = db.add(query);
+            int result = db.RunQuery(query);
             if (result == 1)
             {
                 MessageBox.Show("Xóa thành công !");
@@ -81,6 +81,28 @@ namespace QuanCafe
                 MessageBox.Show("Xóa thất bại !");
             }
         }
+
+        private void MenuItem_Click(object sender, RoutedEventArgs e)
+        {
+            var window = new Order();
+            window.ShowDialog();
+        }
+
+        private void MenuItem_Click_1(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void MenuItem_Click_2(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void MenuItem_Click_3(object sender, RoutedEventArgs e)
+        {
+
+        }
+
 
     }
 }
