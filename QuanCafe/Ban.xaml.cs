@@ -43,8 +43,8 @@ namespace QuanCafe
             DataRowView rowSelected = dg.SelectedItem as DataRowView;
             if (rowSelected != null)
             {
-                idBan.Text = rowSelected["ID"].ToString();
-                tinhTrang.Text = rowSelected["TinhTrang"].ToString();
+                idBan.Text = rowSelected[0].ToString();
+                tinhTrang.Text = rowSelected[1].ToString();
             }
         }
 
@@ -84,8 +84,15 @@ namespace QuanCafe
 
         private void MenuItem_Click(object sender, RoutedEventArgs e)
         {
-            var window = new Order();
-            window.ShowDialog();
+            try
+            {
+                var window = new Order(int.Parse(idBan.Text));
+                window.ShowDialog();
+            }
+            catch(Exception error)
+            {
+                MessageBox.Show(error.Message);
+            }
         }
 
         private void MenuItem_Click_1(object sender, RoutedEventArgs e)
