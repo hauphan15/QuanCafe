@@ -21,15 +21,15 @@
         </Grid.ColumnDefinitions>
         <Grid Grid.Column="0">
             <Grid.RowDefinitions>
-                <RowDefinition Height="50"></RowDefinition>
+                <RowDefinition Height="70"></RowDefinition>
                 <RowDefinition></RowDefinition>
             </Grid.RowDefinitions>
-            <Grid Grid.Row="0" Margin="5">
-                <TextBox x:Name="search" Margin="5" Width="130" HorizontalAlignment="Left" 
+            <Border Grid.Row="0" Margin="10" Background="GhostWhite" BorderBrush="Gainsboro" BorderThickness="1">
+                <TextBox x:Name="search" TextChanged="Search_TextChanged" Margin="10" Width="auto" HorizontalAlignment="Left" VerticalAlignment="Center"
                      materialDesign:HintAssist.Hint="Search..." Background="{x:Null}">
                 </TextBox>
-            </Grid>
-            <Grid Grid.Row="1">
+            </Border >
+            <Border Grid.Row="1" Margin="5" Background="GhostWhite" BorderBrush="Silver" BorderThickness="1" CornerRadius="4">
                 <ListView x:Name="list" Margin="5" SelectionChanged="List_SelectionChanged">
                     <ItemsControl.ItemsPanel>
                         <ItemsPanelTemplate>
@@ -64,62 +64,64 @@
                                     </Grid>
                                 </Grid>
                             </materialDesign:Card>
-                         
+
                         </DataTemplate>
                     </ListView.ItemTemplate>
                 </ListView>
-            </Grid>
+            </Border>
         </Grid>
-        <Grid Grid.Column="1">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="50" />
-                <RowDefinition Height="70"/>
-                <RowDefinition Height="500"/>
-                <RowDefinition/>
-            </Grid.RowDefinitions>
-            <TextBlock x:Name="Ban" Margin="5" Grid.Row="0"  Style="{StaticResource MaterialDesignHeadlineTextBlock}"/>
-            <Grid Grid.Row="1">
-                <materialDesign:Card Margin="10" Height="50">
-                    <WrapPanel>
-                        <TextBlock x:Name="tensp" Margin="10" Width="auto" VerticalAlignment="Bottom" Text="tên thức uống" 
-                                   Style="{StaticResource MaterialDesignSubheadingTextBlock}">
-                            
-                        </TextBlock>
-                        <TextBlock x:Name="loaisp" Text="loại" Margin="10" Width="auto" VerticalAlignment="Bottom"
+        <Border Grid.Column="1" Margin="5" Background="GhostWhite" BorderBrush="Silver" BorderThickness="1" CornerRadius="4">
+            <Grid >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="50" />
+                    <RowDefinition Height="70"/>
+                    <RowDefinition Height="500"/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <TextBlock x:Name="Ban" Margin="5" Grid.Row="0"  Style="{StaticResource MaterialDesignHeadlineTextBlock}" TextAlignment="Center"/>
+                <Grid Grid.Row="1">
+                    <materialDesign:Card Margin="10" Height="50">
+                        <WrapPanel>
+                            <TextBlock x:Name="tensp" Margin="10" Width="auto" VerticalAlignment="Bottom" Text="tên thức uống" 
                                    Style="{StaticResource MaterialDesignSubheadingTextBlock}">
 
-                        </TextBlock>
-                        <TextBox x:Name="soluong" IsEnabled="False" TextAlignment="Center" materialDesign:HintAssist.Hint="số lượng" Margin="10" Width="auto" VerticalAlignment="Bottom" />
-                        
-                        <TextBlock x:Name="tien" Text="thành tiền" Margin="10" Width="auto" VerticalAlignment="Bottom"
+                            </TextBlock>
+                            <TextBlock x:Name="loaisp" Text="loại" Margin="10" Width="auto" VerticalAlignment="Bottom"
                                    Style="{StaticResource MaterialDesignSubheadingTextBlock}">
 
-                        </TextBlock>
-                    </WrapPanel>
-                </materialDesign:Card>
-            </Grid>
-            <Grid Grid.Row="2">
-                <materialDesign:Card Margin="10">
-                    <DataGrid x:Name="order" Margin="5"  ItemsSource="{Binding Items3}" AutoGenerateColumns="False"
+                            </TextBlock>
+                            <TextBox x:Name="soluong" IsEnabled="False" TextAlignment="Center" materialDesign:HintAssist.Hint="số lượng" Margin="10" Width="auto" VerticalAlignment="Bottom" />
+
+                            <TextBlock x:Name="tien" Text="thành tiền" Margin="10" Width="auto" VerticalAlignment="Bottom"
+                                   Style="{StaticResource MaterialDesignSubheadingTextBlock}">
+
+                            </TextBlock>
+                        </WrapPanel>
+                    </materialDesign:Card>
+                </Grid>
+                <Grid Grid.Row="2">
+                    <materialDesign:Card Margin="10">
+                        <DataGrid x:Name="order" Margin="5"  ItemsSource="{Binding Items3}" AutoGenerateColumns="False"
                     CanUserSortColumns="True" CanUserAddRows="False"
                     materialDesign:DataGridAssist.CellPadding="4 2 2 2"
                     materialDesign:DataGridAssist.ColumnHeaderPadding="4 2 2 2" SelectionChanged="Order_SelectionChanged" >
-                        <DataGrid.Columns>
-                            <DataGridTextColumn Header="Tên thức uống" Binding="{Binding Path=TenSanPham}" IsReadOnly="True"/>
-                            <DataGridTextColumn Header="Loại" Binding="{Binding Path=LoaiSanPham}" IsReadOnly="True"/>
-                            <DataGridTextColumn Header="Số Lượng" Binding="{Binding Path=SoLuong}" IsReadOnly="True"/>
-                            <DataGridTextColumn Header="Giá" Binding="{Binding Path=Tien}" IsReadOnly="True"/>
-                            <DataGridTemplateColumn>
-                                <DataGridTemplateColumn.CellTemplate>
-                                    <DataTemplate>
-                                        <Button Margin="5" Click="Button_Click_1" Content="del" Background="Red" Foreground="Black"/>
-                                    </DataTemplate>
-                                </DataGridTemplateColumn.CellTemplate>
-                            </DataGridTemplateColumn>
-                        </DataGrid.Columns>
-                    </DataGrid>
-                </materialDesign:Card>
+                            <DataGrid.Columns>
+                                <DataGridTextColumn Header="Tên thức uống" Binding="{Binding Path=TenSanPham}" IsReadOnly="True"/>
+                                <DataGridTextColumn Header="Loại" Binding="{Binding Path=LoaiSanPham}" IsReadOnly="True"/>
+                                <DataGridTextColumn Header="Số Lượng" Binding="{Binding Path=SoLuong}" IsReadOnly="True"/>
+                                <DataGridTextColumn Header="Giá" Binding="{Binding Path=Tien}" IsReadOnly="True"/>
+                                <DataGridTemplateColumn>
+                                    <DataGridTemplateColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <Button Margin="5" Click="Button_Click_1" Content="del" Background="Red" Foreground="Black"/>
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.CellTemplate>
+                                </DataGridTemplateColumn>
+                            </DataGrid.Columns>
+                        </DataGrid>
+                    </materialDesign:Card>
+                </Grid>
             </Grid>
-        </Grid>
+        </Border>
     </Grid>
 </Window>

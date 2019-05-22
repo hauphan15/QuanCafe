@@ -39,9 +39,14 @@ namespace QuanCafe
             
         }
 
+        private void Search_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            Load();
+        }
+
         void Load()
         {
-            var query = "select  ImgSrc,TenSanPham,LoaiSanPham,ID from SanPham Order by ID";
+            var query = "select  ImgSrc,TenSanPham,LoaiSanPham,ID from SanPham Where TenSanPham like N'%" + search.Text + "%' Order by ID";
             Database db = new Database();
             var item = new List<drink>();
             var data = db.ExcuteQuery(query);
@@ -233,5 +238,7 @@ namespace QuanCafe
             soluong.IsEnabled = false;
 
         }
+
+
     }
 }
