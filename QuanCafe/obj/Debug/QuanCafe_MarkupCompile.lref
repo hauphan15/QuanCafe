@@ -1,12 +1,15 @@
 ﻿
-FE:\Project\QuanCafe\QuanCafe\App.xaml;;
-FE:\Project\QuanCafe\QuanCafe\Ban.xaml;;
-FE:\Project\QuanCafe\QuanCafe\HoaDon.xaml;;
-FE:\Project\QuanCafe\QuanCafe\Kho.xaml;;
-FE:\Project\QuanCafe\QuanCafe\MainWindow.xaml;;
-FE:\Project\QuanCafe\QuanCafe\DangNhap.xaml;;
-FE:\Project\QuanCafe\QuanCafe\MainWindowNV.xaml;;
-FE:\Project\QuanCafe\QuanCafe\NhanVien.xaml;;
-FE:\Project\QuanCafe\QuanCafe\Order.xaml;;
-FE:\Project\QuanCafe\QuanCafe\ThucUong.xaml;;
+FC:\Users\zMaChaoz\Desktop\QuanCafe\QuanCafe\App.xaml;;
+FC:\Users\zMaChaoz\Desktop\QuanCafe\QuanCafe\MainWindow.xaml;;
+FC:\Users\zMaChaoz\Desktop\QuanCafe\QuanCafe\DangNhap.xaml;;
+FC:\Users\zMaChaoz\Desktop\QuanCafe\QuanCafe\MainWindowNV.xaml;;
+FC:\Users\zMaChaoz\Desktop\QuanCafe\QuanCafe\Order.xaml;;
+FC:\Users\zMaChaoz\Desktop\QuanCafe\QuanCafe\UC\Ban_UC.xaml;;
+FC:\Users\zMaChaoz\Desktop\QuanCafe\QuanCafe\UC\HoaDon_UC.xaml;;
+FC:\Users\zMaChaoz\Desktop\QuanCafe\QuanCafe\UC\Kho_UC.xaml;;
+FC:\Users\zMaChaoz\Desktop\QuanCafe\QuanCafe\UC\NhanVien_UC.xaml;;
+FC:\Users\zMaChaoz\Desktop\QuanCafe\QuanCafe\UC\ThucUong_UC.xaml;;
+FC:\Users\zMaChaoz\Desktop\QuanCafe\QuanCafe\Chil_Window\ChuyenBan.xaml;;
+FC:\Users\zMaChaoz\Desktop\QuanCafe\QuanCafe\Chil_Window\DoiMatKhau.xaml;;
+FC:\Users\zMaChaoz\Desktop\QuanCafe\QuanCafe\Chil_Window\ThemNhanVien.xaml;;
 

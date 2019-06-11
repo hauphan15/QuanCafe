@@ -25,7 +25,7 @@ namespace QuanCafe
             InitializeComponent();
             Load();
 
-            Ban.Text = "Bàn " + id.ToString();
+            ban.Text = "Bàn " + id.ToString();
             ID_ban = id;
             Load_ListOrder();
         }
@@ -118,9 +118,15 @@ namespace QuanCafe
                            + " from SanPham SP, Order_Ban OD "
                           + "  where SP.ID = OD.Id_SP and OD.ID_Ban = " + ID_ban.ToString()
                          + "   group by SP.ID) as A , SanPham as B "
-                    + " Where B.ID = A.ID";
+                    + " Where B.ID = A.ID ";
             var data = new Database().ExcuteQuery(query);
             order.ItemsSource = data.DefaultView;
+            query = "(" + query + ") as k";
+
+            var queryy = "select Sum(k.Tien) as tien from " + query;
+            var i = new Database().ExcuteQuery(queryy);
+            total.Text = i.Rows[0][0].ToString() + " VND";
+
         }
 
         int imsg = 0;
@@ -190,6 +196,8 @@ namespace QuanCafe
                 isselect = false;
                 l = new drink();
 
+                SetBan();
+
                 Load_ListOrder();
             }
         }
@@ -237,8 +245,44 @@ namespace QuanCafe
             tien.Text = "thành tiền";
             soluong.IsEnabled = false;
 
+            SetBan();
+
         }
 
 
+        void SetBan()
+        {
+            var i = new Database().ExcuteQuery("select * from Order_Ban Where ID_Ban = " + ID_ban.ToString());
+            if(i.Rows.Count>0)
+            {
+                var db = new Database().RunQuery("Update Ban Set TinhTrang = 'Busy' Where ID = " + ID_ban.ToString());
+            }
+            else
+            {
+                var db = new Database().RunQuery("Update Ban Set TinhTrang = 'Idle' Where ID = " + ID_ban.ToString());
+            }
+        }
+
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+            var data = new Database().ExcuteQuery("select SP.ID,OD.SoLuong,(OD.SoLuong*Sp.GiaBan) as Tien from Order_Ban OD, SanPham SP Where OD.Id_SP = SP.ID And OD.ID_Ban = " + ID_ban.ToString());
+            for (int i = 0; i < data.Rows.Count; i++)
+            {
+                var row = data.Rows[i];
+                var db = new Database().RunQuery("Insert into HoaDon(ID_SP,SoLuong,Tien,NgayBan) "
+                   + "values('" + row[0].ToString() + "','" + row[1].ToString() + "','" + row[2].ToString() + "','" + DateTime.Now.ToString("yyyy-MM-dd") + "')");
+            }
+
+            var d = new Database().RunQuery("delete Order_Ban where ID_Ban = " + ID_ban.ToString());
+            SetBan();
+
+            this.Close();
+            
+        }
+
+        private void Button_Click_3(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
     }
 }

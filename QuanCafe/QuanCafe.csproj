@@ -61,40 +61,49 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Ban.xaml.cs">
-      <DependentUpon>Ban.xaml</DependentUpon>
+    <Compile Include="Chil_Window\ChuyenBan.xaml.cs">
+      <DependentUpon>ChuyenBan.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Chil_Window\DoiMatKhau.xaml.cs">
+      <DependentUpon>DoiMatKhau.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Chil_Window\ThemNhanVien.xaml.cs">
+      <DependentUpon>ThemNhanVien.xaml</DependentUpon>
     </Compile>
     <Compile Include="DangNhap.xaml.cs">
       <DependentUpon>DangNhap.xaml</DependentUpon>
     </Compile>
     <Compile Include="Database.cs" />
-    <Compile Include="HoaDon.xaml.cs">
-      <DependentUpon>HoaDon.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Kho.xaml.cs">
-      <DependentUpon>Kho.xaml</DependentUpon>
-    </Compile>
     <Compile Include="MainWindowNV.xaml.cs">
       <DependentUpon>MainWindowNV.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="NhanVien.xaml.cs">
-      <DependentUpon>NhanVien.xaml</DependentUpon>
     </Compile>
     <Compile Include="Order.xaml.cs">
       <DependentUpon>Order.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ThucUong.xaml.cs">
-      <DependentUpon>ThucUong.xaml</DependentUpon>
+    <Compile Include="UC\Ban_UC.xaml.cs">
+      <DependentUpon>Ban_UC.xaml</DependentUpon>
     </Compile>
-    <Page Include="Ban.xaml">
+    <Compile Include="UC\HoaDon_UC.xaml.cs">
+      <DependentUpon>HoaDon_UC.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UC\Kho_UC.xaml.cs">
+      <DependentUpon>Kho_UC.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UC\NhanVien_UC.xaml.cs">
+      <DependentUpon>NhanVien_UC.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UC\ThucUong_UC.xaml.cs">
+      <DependentUpon>ThucUong_UC.xaml</DependentUpon>
+    </Compile>
+    <Page Include="Chil_Window\ChuyenBan.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="HoaDon.xaml">
+    <Page Include="Chil_Window\DoiMatKhau.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Kho.xaml">
+    <Page Include="Chil_Window\ThemNhanVien.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -118,15 +127,27 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="NhanVien.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="Order.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="ThucUong.xaml">
+    <Page Include="UC\Ban_UC.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UC\HoaDon_UC.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UC\Kho_UC.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UC\NhanVien_UC.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UC\ThucUong_UC.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -160,6 +181,32 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="img\add.png" />
+    <Resource Include="img\cafedaxay.jpg" />
+    <Resource Include="img\cafeden.jpg" />
+    <Resource Include="img\cafesua.jpg" />
+    <Resource Include="img\del.png" />
+    <Resource Include="img\refresh.png" />
+    <Resource Include="img\sinhtodaudua.jpg" />
+    <Resource Include="img\sinhtosuachua.jpg" />
+    <Resource Include="img\sinhtovietquat.jpg" />
+    <Resource Include="img\trabidaochanh.jpg" />
+    <Resource Include="img\tradao.jpg" />
+    <Resource Include="img\trasuakiwi.jpg" />
+    <Resource Include="img\trasuataichi.jpg" />
+    <Resource Include="img\trasuatranchau.jpg" />
+    <Resource Include="img\traxanhchanhday.jpg" />
+    <Resource Include="img\traxanhkiwi.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\Untitled.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\logout.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

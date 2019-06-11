@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-E:\Project\QuanCafe\QuanCafe\obj\Debug\
+C:\Users\zMaChaoz\Desktop\QuanCafe\QuanCafe\obj\Debug\
 QuanCafe
 none
 false
 DEBUG;TRACE
-E:\Project\QuanCafe\QuanCafe\App.xaml
-91687149670
+C:\Users\zMaChaoz\Desktop\QuanCafe\QuanCafe\App.xaml
+12-1860901644
 
-14-1274181413
-152023121905
-Ban.xaml;HoaDon.xaml;Kho.xaml;MainWindow.xaml;DangNhap.xaml;MainWindowNV.xaml;NhanVien.xaml;Order.xaml;ThucUong.xaml;
+17-1920500145
+151315701346
+Chil_Window\ChuyenBan.xaml;Chil_Window\DoiMatKhau.xaml;Chil_Window\ThemNhanVien.xaml;MainWindow.xaml;DangNhap.xaml;MainWindowNV.xaml;Order.xaml;UC\Ban_UC.xaml;UC\HoaDon_UC.xaml;UC\Kho_UC.xaml;UC\NhanVien_UC.xaml;UC\ThucUong_UC.xaml;
 
 False
 

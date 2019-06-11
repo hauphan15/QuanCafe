@@ -1,0 +1,38 @@
+﻿<Window x:Class="QuanCafe.Chil_Window.DoiMatKhau"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:QuanCafe.Chil_Window"
+        mc:Ignorable="d"
+         Title="DoiMatKhau" Height="300" Width="300"
+          xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+             TextElement.FontWeight="Regular"
+             TextElement.FontSize="13"
+             TextOptions.TextFormattingMode="Ideal"
+             TextOptions.TextRenderingMode="Auto"
+             Background="{DynamicResource MaterialDesignPaper}"
+             FontFamily="{DynamicResource MaterialDesignFont}">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <PasswordBox x:Name="Pass1" Grid.Row="0" materialDesign:HintAssist.Hint="Mật khẩu cũ" materialDesign:HintAssist.Foreground="Green"
+                     materialDesign:TextFieldAssist.UnderlineBrush="Green" Style="{StaticResource MaterialDesignFloatingHintPasswordBox}"
+                     VerticalAlignment="Center" Width="200" HorizontalAlignment="Center"/>
+        <PasswordBox x:Name="Pass2" Grid.Row="1" materialDesign:HintAssist.Hint="Mật khẩu mới" materialDesign:HintAssist.Foreground="Green"
+                     materialDesign:TextFieldAssist.UnderlineBrush="Green" Style="{StaticResource MaterialDesignFloatingHintPasswordBox}"
+                     VerticalAlignment="Center" Width="200" HorizontalAlignment="Center"/>
+        <PasswordBox x:Name="Pass3" Grid.Row="2" materialDesign:HintAssist.Hint="Nhập lại" materialDesign:HintAssist.Foreground="Green"
+                     materialDesign:TextFieldAssist.UnderlineBrush="Green" Style="{StaticResource MaterialDesignFloatingHintPasswordBox}"
+                     VerticalAlignment="Center" Width="200" HorizontalAlignment="Center"/>
+        <WrapPanel Grid.Row="3">
+            <Button Content="OK" Width="80" Margin="40,20,0,0" Click="Button_Click_1"/>
+            <Button Content="Cancel" Width="80"  Margin="50,20,0,0" Click="Button_Click"/>
+        </WrapPanel>
+    </Grid>
+</Window>

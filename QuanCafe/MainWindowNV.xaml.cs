@@ -11,6 +11,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using QuanCafe.UC;
+using QuanCafe.Chil_Window;
 
 namespace QuanCafe
 {
@@ -19,34 +21,42 @@ namespace QuanCafe
     /// </summary>
     public partial class MainWindowNV : Window
     {
-        public MainWindowNV()
+        string ID;
+        public MainWindowNV(string id)
         {
             InitializeComponent();
-            ThucUong th = new ThucUong();
+            ThucUong_UC th = new ThucUong_UC();
             show.Children.Clear();
             show.Children.Add(th);
+            ID = id;
+            ten.Content = new Database().ExcuteQuery("select HoTen from NhanVien where ID='" + ID + "'").Rows[0][0];
         }
 
         private void ThucUongBtn_Click_1(object sender, RoutedEventArgs e)
         {
-            ThucUong th = new ThucUong();
+            ThucUong_UC tu = new ThucUong_UC();
             show.Children.Clear();
-            show.Children.Add(th);
+            show.Children.Add(tu);
         }
 
         private void BanBtn_Click(object sender, RoutedEventArgs e)
         {
-            Ban b = new Ban();
+            var b = new Ban_UC();
             show.Children.Clear();
             show.Children.Add(b);
         }
 
         private void HoaDonBtn_Click(object sender, RoutedEventArgs e)
         {
-            HoaDon hd = new HoaDon();
+            var hd = new HoaDon_UC();
             show.Children.Clear();
             show.Children.Add(hd);
         }
 
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            var window = new DoiMatKhau(ID);
+            window.ShowDialog();
+        }
     }
 }

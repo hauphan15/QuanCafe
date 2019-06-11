@@ -1,0 +1,102 @@
+﻿<UserControl x:Class="QuanCafe.UC.Ban_UC"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:QuanCafe.UC"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800"
+              xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+             TextElement.FontWeight="Regular"
+             TextElement.FontSize="13"
+             TextOptions.TextFormattingMode="Ideal"
+             TextOptions.TextRenderingMode="Auto"
+             Background="{DynamicResource MaterialDesignPaper}"
+             FontFamily="{DynamicResource MaterialDesignFont}">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="70"></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <Border Margin="5" Background="GhostWhite" BorderBrush="Silver" BorderThickness="1" CornerRadius="4" Grid.Row="0" Width="Auto">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="auto" />
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition />
+                    
+
+                </Grid.ColumnDefinitions>
+                <WrapPanel Grid.Column="0" Margin="5">
+                    <TextBox
+                    x:Name="ID"
+                    Width="auto"
+                    Margin="5"
+                    materialDesign:HintAssist.Hint="  ID  "
+                    Style="{StaticResource MaterialDesignFloatingHintTextBox}">
+                    </TextBox>
+                    <TextBox
+                    x:Name="trangthai"
+                    Width="auto"
+                    Margin="5"
+                    materialDesign:HintAssist.Hint="Trang thái"
+                    Style="{StaticResource MaterialDesignFloatingHintTextBox}">
+                    </TextBox>
+                </WrapPanel>
+                <Button Grid.Column="1" x:Name="Them"  Click="Them_Click" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="8">
+                    <Button.Background>
+                        <ImageBrush ImageSource="/QuanCafe;component/img/add.png"/>
+                    </Button.Background>
+                </Button>
+                <Button x:Name="Xoa" Grid.Column="2" Click="Xoa_Click" IsEnabled="False" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="8" RenderTransformOrigin="9.288,0.656">
+                    <Button.Background>
+                        <ImageBrush ImageSource="/QuanCafe;component/img/del.png"/>
+                    </Button.Background>
+                </Button>
+                <Button x:Name="Order" Grid.Column="3" Padding="2" Margin="8" Content="Order" Click="MenuItem_Click"/>
+                <Button x:Name="Tinhtien" Padding="2" Grid.Column="4" Margin="8" Content="Thanh Toán" Click="MenuItem_Click"/>
+                <Button x:Name="ChuyenBan" Padding="2" Margin="8" Grid.Column="5" Content="Chuyển Bàn" Click="MenuItem_Click_3"/>
+                <Button x:Name="refresh" Click="Refresh_Click" Grid.Column="6" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="8">
+                    <Button.Background>
+                        <ImageBrush ImageSource="/QuanCafe;component/img/refresh.png"/>
+                    </Button.Background>
+                </Button>
+            </Grid>
+        </Border>
+
+        <Grid Grid.Row="1" Width="Auto">
+            <materialDesign:Card Margin="10" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+                <DataGrid  
+                       x:Name="dataGrid1" 
+                       AutoGenerateColumns="False"
+                       HorizontalAlignment="Stretch" 
+                       Margin="10,10,10,-0.4" 
+                       VerticalAlignment="Stretch" SelectionChanged="DataGrid1_SelectionChanged">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="ID" Binding="{Binding Path=ID}"/>
+                        <DataGridTextColumn Header="Tình trạng" Binding="{Binding Path=TinhTrang}"/>
+                    </DataGrid.Columns>
+                    <DataGrid.Resources>
+                        <ContextMenu x:Key="DataRowContextMenu">
+                            <MenuItem Header="Order" Click="MenuItem_Click"></MenuItem>
+                            <MenuItem Header="Tính tiền" Click="MenuItem_Click_1"></MenuItem>
+                            <MenuItem Header="Thông tin" Click="MenuItem_Click_2"></MenuItem>
+                            <MenuItem Header="Chuyển bàn" Click="MenuItem_Click_3"></MenuItem>
+                        </ContextMenu>
+                    </DataGrid.Resources>
+                    <DataGrid.RowStyle>
+                        <Style TargetType="DataGridRow">
+                            <Setter Property="ContextMenu" Value="{StaticResource DataRowContextMenu}"/>
+                        </Style>
+                    </DataGrid.RowStyle>
+                </DataGrid>
+            </materialDesign:Card>
+        </Grid>
+    </Grid>
+</UserControl>

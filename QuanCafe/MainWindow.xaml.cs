@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using QuanCafe.UC;
+using QuanCafe.Chil_Window;
 
 namespace QuanCafe
 {
@@ -20,47 +22,61 @@ namespace QuanCafe
     /// </summary>
     public partial class MainWindow : Window
     {
-        public MainWindow()
+        string ID;
+        public MainWindow( string id)
         {
             InitializeComponent();
-            ThucUong th = new ThucUong();
+            ThucUong_UC th = new ThucUong_UC();
             show.Children.Clear();
             show.Children.Add(th);
+            ID = id;
+            ten.Content = new Database().ExcuteQuery("select HoTen from NhanVien where ID='" + ID + "'").Rows[0][0];
         }
 
         private void ThucUongBtn_Click_1(object sender, RoutedEventArgs e)
         {
-            ThucUong th = new ThucUong();
+            ThucUong_UC th = new ThucUong_UC();
             show.Children.Clear();
             show.Children.Add(th);
         }
 
         private void BanBtn_Click(object sender, RoutedEventArgs e)
         {
-            Ban b = new Ban();
+            var b = new Ban_UC();
             show.Children.Clear();
             show.Children.Add(b);
         }
 
         private void NhanVienBtn_Click(object sender, RoutedEventArgs e)
         {
-            NhanVien nv = new NhanVien();
+            var nv = new NhanVien_UC();
             show.Children.Clear();
             show.Children.Add(nv);
         }
 
         private void HoaDonBtn_Click(object sender, RoutedEventArgs e)
         {
-            HoaDon hd = new HoaDon();
+            var hd = new HoaDon_UC();
             show.Children.Clear();
             show.Children.Add(hd);
         }
 
         private void KhoBtn_Click(object sender, RoutedEventArgs e)
         {
-            Kho k = new Kho();
+            var k = new Kho_UC();
             show.Children.Clear();
             show.Children.Add(k);
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            var window = new DoiMatKhau(ID);
+            window.ShowDialog();
+        }
+
+        private void ThongKeBtn_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Chưa hoàn thành!");
         }
     }
 }

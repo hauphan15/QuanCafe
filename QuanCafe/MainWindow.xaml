@@ -20,8 +20,25 @@
             <ColumnDefinition></ColumnDefinition>
         </Grid.ColumnDefinitions>
 
-        <Grid Grid.Column="0" x:Name="Menu">
-            <ListBox IsEnabled="{Binding IsChecked, ElementName=EnableListBox}" Background="#FF990000">
+        <Grid  Background="#FF990000" Grid.Column="0" x:Name="Menu">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="80"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <StackPanel Grid.Row="0">
+                <WrapPanel>
+                    <materialDesign:Chip x:Name="ten" Padding="0" Margin="5" Content="James Willock">
+                        <materialDesign:Chip.Icon>
+                            <Image Source="img/icon.png" />
+                        </materialDesign:Chip.Icon>
+                    </materialDesign:Chip>
+                    <Button Width="50" Padding="0"   >
+                        <Image Source="img/logout.png" />
+                    </Button>
+                </WrapPanel>
+                <Button Content="Đổi mật khẩu" HorizontalAlignment="Center" Click="Button_Click"/>
+            </StackPanel>
+            <ListBox Grid.Row="1" IsEnabled="{Binding IsChecked, ElementName=EnableListBox}" Background="#FF990000">
                 <Grid>
                     <materialDesign:PackIcon Width="20" Height="30" Kind="Coffee" Foreground="#DDEAD8D8"/>
                     <Button HorizontalContentAlignment="Left" Width="165" x:Name="thucUongBtn" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#DDDCD6D6" Margin="25,0,0,0" Click="ThucUongBtn_Click_1">
@@ -54,7 +71,7 @@
                 </Grid>
                 <Grid>
                     <materialDesign:PackIcon Width="20" Height="30" Kind="ChartBar" Foreground="#DDEAD8D8"/>
-                    <Button HorizontalContentAlignment="Left" Width="165" x:Name="thongKeBtn"  Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#DDDCD6D6" Margin="25,0,0,0">
+                    <Button HorizontalContentAlignment="Left" Width="165" x:Name="thongKeBtn"  Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#DDDCD6D6" Margin="25,0,0,0" Click="ThongKeBtn_Click">
                         THỐNG KÊ
                     </Button>
                 </Grid>

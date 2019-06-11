@@ -32,13 +32,13 @@ namespace QuanCafe
             int result = db.Login(tk, mk);
             if(result==1)
             {
-                MainWindowNV mainWdNV = new MainWindowNV();
+                MainWindowNV mainWdNV = new MainWindowNV(tk);
                 mainWdNV.Show();
                 this.Close();
             }
             if(result==2)
             {
-                MainWindow mainWd = new MainWindow();
+                MainWindow mainWd = new MainWindow(tk);
                 mainWd.Show();
                 this.Close();
             }
