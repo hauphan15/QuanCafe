@@ -30,7 +30,7 @@ namespace QuanCafe.UC
 
         public void LoadData()
         {
-            var query = "select ID,HoTen,DiaChi,NgaySinh,NgayVaoLam,Sdt,ChucVu from NhanVien";
+            var query = "select ID,HoTen,DiaChi,NgaySinh,NgayVaoLam,Sdt,ChucVu,Luong from NhanVien";
             dataGrid1.ItemsSource = new Database().ExcuteQuery(query).DefaultView;
         }
 
@@ -57,6 +57,7 @@ namespace QuanCafe.UC
                 ngayVaoLam.Text = select["NgayVaoLam"].ToString();
                 sdt.Text = select["Sdt"].ToString();
                 luong.Text = select["Luong"].ToString();
+                chucVu.Text = select["ChucVu"].ToString();
             }
         }
 
